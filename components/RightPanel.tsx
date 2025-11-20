@@ -1,0 +1,1 @@
+export const RightPanel = () => <section>Right Panel</section>;

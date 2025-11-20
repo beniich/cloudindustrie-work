@@ -1,0 +1,2 @@
+{
+  "compilerOptions": {"target":"es5"},"include":["**/*.ts","**/*.tsx"]}

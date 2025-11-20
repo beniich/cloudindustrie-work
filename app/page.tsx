@@ -1,0 +1,1 @@
+export default function Home() { return (<div>CloudIndustrie Stitch Homepage</div>); }
