@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Cloud Industrie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0A2540",
+                        "secondary": "#00AEEF",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#111318",
+                        "text-light-headings": "#1E293B",
+                        "text-light-body": "#475569",
+                        "text-dark-headings": "#F1F5F9",
+                        "text-dark-body": "#94A3B8",
+                        "border-light": "#E2E8F0",
+                        "border-dark": "#334155",
+                        "input-bg-light": "#FFFFFF",
+                        "input-bg-dark": "#1C1F27"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top App Bar -->
+<header class="flex items-center p-4 justify-between border-b border-border-light dark:border-border-dark sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full text-text-light-headings dark:text-text-dark-headings hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-text-light-headings dark:text-text-dark-headings text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Contact Us</h2>
+<div class="w-10"></div>
+</header>
+<main class="w-full max-w-2xl mx-auto px-4 py-8 flex-1">
+<!-- Hero Section -->
+<section class="text-center mb-10">
+<h1 class="text-text-light-headings dark:text-text-dark-headings tracking-tight text-3xl md:text-4xl font-bold leading-tight pb-3">Get in Touch</h1>
+<p class="text-text-light-body dark:text-text-dark-body text-base font-normal leading-normal max-w-xl mx-auto">Ready to secure your business? Let's talk about how we can help protect your assets.</p>
+</section>
+<!-- Contact Form -->
+<section class="space-y-6">
+<label class="flex flex-col w-full">
+<p class="text-text-light-headings dark:text-text-dark-headings text-sm font-medium leading-normal pb-2">Full Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light-headings dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-input-bg-light dark:bg-input-bg-dark h-12 placeholder:text-text-light-body dark:placeholder:text-text-dark-body px-4 text-base font-normal leading-normal" placeholder="Enter your full name" value=""/>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-text-light-headings dark:text-text-dark-headings text-sm font-medium leading-normal pb-2">Company Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light-headings dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-input-bg-light dark:bg-input-bg-dark h-12 placeholder:text-text-light-body dark:placeholder:text-text-dark-body px-4 text-base font-normal leading-normal" placeholder="Enter your company name" value=""/>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-text-light-headings dark:text-text-dark-headings text-sm font-medium leading-normal pb-2">Work Email</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light-headings dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-input-bg-light dark:bg-input-bg-dark h-12 placeholder:text-text-light-body dark:placeholder:text-text-dark-body px-4 text-base font-normal leading-normal" placeholder="you@company.com" type="email" value=""/>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-text-light-headings dark:text-text-dark-headings text-sm font-medium leading-normal pb-2">Phone Number</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light-headings dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-input-bg-light dark:bg-input-bg-dark h-12 placeholder:text-text-light-body dark:placeholder:text-text-dark-body px-4 text-base font-normal leading-normal" placeholder="+1 (555) 000-0000" type="tel" value=""/>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-text-light-headings dark:text-text-dark-headings text-sm font-medium leading-normal pb-2">Reason for Contact</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light-headings dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-input-bg-light dark:bg-input-bg-dark h-12 px-4 text-base font-normal leading-normal">
+<option>Sales Inquiry</option>
+<option>Support</option>
+<option>Partnership</option>
+<option>Other</option>
+</select>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-text-light-headings dark:text-text-dark-headings text-sm font-medium leading-normal pb-2">Message</p>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-light-headings dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-input-bg-light dark:bg-input-bg-dark h-32 placeholder:text-text-light-body dark:placeholder:text-text-dark-body p-4 text-base font-normal leading-normal" placeholder="Tell us how we can help..."></textarea>
+</label>
+<button class="flex w-full items-center justify-center rounded-lg bg-primary h-12 px-6 text-base font-medium text-white shadow-sm transition-all hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Send Message</button>
+<p class="text-xs text-text-light-body dark:text-text-dark-body text-center pt-2">By submitting this form, you agree to our <a class="underline hover:text-secondary" href="#">Privacy Policy</a>.</p>
+</section>
+<!-- Direct Contact Info -->
+<section class="mt-16">
+<h3 class="text-xl font-bold text-text-light-headings dark:text-text-dark-headings text-center mb-8">Other Ways to Reach Us</h3>
+<div class="space-y-6">
+<a class="flex items-center p-4 rounded-lg bg-background-light dark:bg-input-bg-dark border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="tel:+1234567890">
+<div class="flex items-center justify-center size-10 bg-primary/10 rounded-full mr-4">
+<span class="material-symbols-outlined text-primary">call</span>
+</div>
+<div>
+<p class="font-semibold text-text-light-headings dark:text-text-dark-headings">Phone</p>
+<p class="text-text-light-body dark:text-text-dark-body">+1 (234) 567-890</p>
+</div>
+</a>
+<a class="flex items-center p-4 rounded-lg bg-background-light dark:bg-input-bg-dark border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="mailto:contact@cloudindustrie.com">
+<div class="flex items-center justify-center size-10 bg-primary/10 rounded-full mr-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<p class="font-semibold text-text-light-headings dark:text-text-dark-headings">Email</p>
+<p class="text-text-light-body dark:text-text-dark-body">contact@cloudindustrie.com</p>
+</div>
+</a>
+<a class="flex items-center p-4 rounded-lg bg-background-light dark:bg-input-bg-dark border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<div class="flex items-center justify-center size-10 bg-primary/10 rounded-full mr-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="font-semibold text-text-light-headings dark:text-text-dark-headings">Address</p>
+<p class="text-text-light-body dark:text-text-dark-body">123 Cyber Security Lane, Tech City, 10101</p>
+</div>
+</a>
+</div>
+<p class="text-center text-text-light-body dark:text-text-dark-body text-sm mt-8">Office Hours: Mon-Fri, 9 AM - 5 PM CET</p>
+</section>
+<!-- Social Media Links -->
+<footer class="mt-16 pb-8 border-t border-border-light dark:border-border-dark pt-8">
+<div class="flex justify-center items-center space-x-6">
+<a class="text-text-light-body dark:text-text-dark-body hover:text-primary dark:hover:text-secondary transition-colors" data-alt="LinkedIn logo" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path>
+</svg>
+</a>
+<a class="text-text-light-body dark:text-text-dark-body hover:text-primary dark:hover:text-secondary transition-colors" data-alt="Twitter logo" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M23.332 5.065c-.864.384-1.79.645-2.775.76a4.832 4.832 0 002.126-2.673 9.686 9.686 0 01-3.068 1.172A4.823 4.823 0 0016.32 3c-2.67 0-4.835 2.165-4.835 4.835 0 .38.043.75.126 1.105-4.018-.203-7.58-2.126-9.967-5.053a4.805 4.805 0 00-.655 2.43c0 1.678.854 3.16 2.152 4.028a4.796 4.796 0 01-2.19-.604v.06c0 2.345 1.668 4.3 3.882 4.744a4.843 4.843 0 01-2.184.083c.616 1.922 2.403 3.32 4.52 3.36a9.69 9.69 0 01-5.996 2.068c-.39 0-.775-.023-1.154-.068A13.725 13.725 0 008.26 21c8.71 0 13.473-7.218 13.473-13.473 0-.205-.005-.41-.014-.613a9.71 9.71 0 002.383-2.46z"></path>
+</svg>
+</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

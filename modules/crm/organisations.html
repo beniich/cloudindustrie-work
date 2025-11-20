@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Organisations | CloudIndustrie CRM</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CloudIndustrie</div>
+            <ul class="nav-links">
+                <li><a href="index.html">CRM</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="opportunites.html">Opportunités</a></li>
+                <li><a href="reporting.html">Reporting</a></li>
+                <li><a href="users.html">Utilisateurs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Gestion des Organisations</h1>
+            <p>Créez, modifiez et gérez les organisations (entreprises, équipes) de votre CRM. Associez des utilisateurs et des contacts à chaque organisation.</p>
+        </section>
+        <section class="features">
+            <h2>Liste des organisations</h2>
+            <table style="width:100%;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(30,64,175,0.07);margin-bottom:2rem;">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Type</th>
+                        <th>Nombre d'utilisateurs</th>
+                        <th>Nombre de contacts</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="org-table-body">
+                    <tr>
+                        <td>Acme Corp</td>
+                        <td>Entreprise</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>
+                            <button onclick="editOrg(this)">Éditer</button>
+                            <button onclick="deleteOrg(this)">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BetaTech</td>
+                        <td>Equipe</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>
+                            <button onclick="editOrg(this)">Éditer</button>
+                            <button onclick="deleteOrg(this)">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Ajouter une organisation</h3>
+            <form id="add-org-form" style="background:#f6f8fa;padding:1rem;border-radius:8px;box-shadow:0 1px 4px rgba(30,64,175,0.07);margin-bottom:2rem;">
+                <label for="org-nom">Nom</label>
+                <input type="text" id="org-nom" name="org-nom" required>
+                <label for="org-type">Type</label>
+                <select id="org-type" name="org-type" required>
+                    <option value="Entreprise">Entreprise</option>
+                    <option value="Equipe">Equipe</option>
+                </select>
+                <label for="org-users">Nombre d'utilisateurs</label>
+                <input type="number" id="org-users" name="org-users" min="1" required>
+                <label for="org-contacts">Nombre de contacts</label>
+                <input type="number" id="org-contacts" name="org-contacts" min="0" required>
+                <button type="submit" class="cta">Ajouter</button>
+            </form>
+            <script>
+            document.getElementById('add-org-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var nom = document.getElementById('org-nom').value;
+                var type = document.getElementById('org-type').value;
+                var users = document.getElementById('org-users').value;
+                var contacts = document.getElementById('org-contacts').value;
+                var tbody = document.getElementById('org-table-body');
+                var row = document.createElement('tr');
+                row.innerHTML = `<td>${nom}</td><td>${type}</td><td>${users}</td><td>${contacts}</td><td><button onclick="editOrg(this)">Éditer</button> <button onclick="deleteOrg(this)">Supprimer</button></td>`;
+                tbody.appendChild(row);
+                this.reset();
+            });
+
+            function deleteOrg(btn) {
+                if(confirm('Supprimer cette organisation ?')) {
+                    btn.closest('tr').remove();
+                }
+            }
+
+            function editOrg(btn) {
+                var row = btn.closest('tr');
+                var cells = row.querySelectorAll('td');
+                var nom = cells[0].innerText;
+                var type = cells[1].innerText;
+                var users = cells[2].innerText;
+                var contacts = cells[3].innerText;
+                document.getElementById('org-nom').value = nom;
+                document.getElementById('org-type').value = type;
+                document.getElementById('org-users').value = users;
+                document.getElementById('org-contacts').value = contacts;
+                row.remove();
+            }
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CloudIndustrie. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
