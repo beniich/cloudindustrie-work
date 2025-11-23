@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatisation personnalisée | CloudIndustrie CRM</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CloudIndustrie</div>
+            <ul class="nav-links">
+                <li><a href="index.html">CRM</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="opportunites.html">Opportunités</a></li>
+                <li><a href="reporting.html">Reporting</a></li>
+                <li><a href="users.html">Utilisateurs</a></li>
+                <li><a href="organisations.html">Organisations</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Automatisation personnalisée</h1>
+            <p>Créez vos propres règles d’automatisation pour optimiser la gestion de votre CRM.</p>
+        </section>
+        <section class="features">
+            <h2>Créer une règle d’automatisation</h2>
+            <form id="automation-form" style="background:#f6f8fa;padding:1rem;border-radius:8px;box-shadow:0 1px 4px rgba(30,64,175,0.07);margin-bottom:2rem;">
+                <label for="trigger">Quand...</label>
+                <select id="trigger" name="trigger" required>
+                    <option value="nouveau_contact">Un nouveau contact est ajouté</option>
+                    <option value="nouvelle_opportunite">Une nouvelle opportunité est créée</option>
+                    <option value="utilisateur_connecte">Un utilisateur se connecte</option>
+                    <option value="organisation_modifiee">Une organisation est modifiée</option>
+                    <option value="contact_supprime">Un contact est supprimé</option>
+                    <option value="utilisateur_ajoute">Un utilisateur est ajouté</option>
+                </select>
+                <label for="action">Alors...</label>
+                <select id="action" name="action" required>
+                    <option value="envoyer_email">Envoyer un email</option>
+                    <option value="creer_tache">Créer une tâche</option>
+                    <option value="notifier_admin">Notifier l’administrateur</option>
+                    <option value="ajouter_note">Ajouter une note</option>
+                    <option value="changer_statut">Changer le statut</option>
+                    <option value="generer_rapport">Générer un rapport</option>
+                </select>
+                <label for="integration">Type d'intégration</label>
+                <select id="integration" name="integration" required>
+                    <option value="email">Email</option>
+                    <option value="webhook">Webhook</option>
+                    <option value="api">API</option>
+                </select>
+                <div id="integration-fields">
+                    <div id="email-fields">
+                        <label for="email-to">Email destinataire</label>
+                        <input type="email" id="email-to" name="email-to">
+                        <label for="email-subject">Sujet</label>
+                        <input type="text" id="email-subject" name="email-subject">
+                        <label for="email-body">Message</label>
+                        <input type="text" id="email-body" name="email-body">
+                    </div>
+                    <div id="webhook-fields" style="display:none;">
+                        <label for="webhook-url">URL du webhook</label>
+                        <input type="url" id="webhook-url" name="webhook-url">
+                        <label for="webhook-payload">Payload (JSON)</label>
+                        <input type="text" id="webhook-payload" name="webhook-payload">
+                    </div>
+                    <div id="api-fields" style="display:none;">
+                        <label for="api-url">URL de l'API</label>
+                        <input type="url" id="api-url" name="api-url">
+                        <label for="api-method">Méthode</label>
+                        <select id="api-method" name="api-method">
+                            <option value="GET">GET</option>
+                            <option value="POST">POST</option>
+                            <option value="PUT">PUT</option>
+                            <option value="DELETE">DELETE</option>
+                        </select>
+                        <label for="api-body">Body (JSON)</label>
+                        <input type="text" id="api-body" name="api-body">
+                    </div>
+                </div>
+                <button type="submit" class="cta">Ajouter la règle</button>
+            </form>
+            <h2>Règles d’automatisation</h2>
+            <ul id="automation-list" style="background:#fff;padding:1rem;border-radius:8px;box-shadow:0 1px 4px rgba(30,64,175,0.07);">
+                <!-- Les règles ajoutées s’afficheront ici -->
+            </ul>
+            <script>
+            document.getElementById('integration').addEventListener('change', function() {
+                document.getElementById('email-fields').style.display = this.value === 'email' ? 'block' : 'none';
+                document.getElementById('webhook-fields').style.display = this.value === 'webhook' ? 'block' : 'none';
+                document.getElementById('api-fields').style.display = this.value === 'api' ? 'block' : 'none';
+            });
+
+            document.getElementById('automation-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var trigger = document.getElementById('trigger').value;
+                var action = document.getElementById('action').value;
+                var integration = document.getElementById('integration').value;
+                var list = document.getElementById('automation-list');
+                var item = document.createElement('li');
+                item.style.marginBottom = '1rem';
+                var details = '';
+                if(integration === 'email') {
+                    details = `<strong>Email à :</strong> ${document.getElementById('email-to').value}<br><strong>Sujet :</strong> ${document.getElementById('email-subject').value}<br><strong>Message :</strong> ${document.getElementById('email-body').value}`;
+                } else if(integration === 'webhook') {
+                    details = `<strong>Webhook URL :</strong> ${document.getElementById('webhook-url').value}<br><strong>Payload :</strong> ${document.getElementById('webhook-payload').value}`;
+                } else if(integration === 'api') {
+                    details = `<strong>API URL :</strong> ${document.getElementById('api-url').value}<br><strong>Méthode :</strong> ${document.getElementById('api-method').value}<br><strong>Body :</strong> ${document.getElementById('api-body').value}`;
+                }
+                item.innerHTML = `<strong>Quand :</strong> ${document.getElementById('trigger').options[document.getElementById('trigger').selectedIndex].text} <br><strong>Alors :</strong> ${document.getElementById('action').options[document.getElementById('action').selectedIndex].text} <br><strong>Intégration :</strong> ${integration}<br>${details} <button onclick="this.parentNode.remove()" style="margin-left:1rem;">Supprimer</button>`;
+                list.appendChild(item);
+                this.reset();
+                document.getElementById('email-fields').style.display = 'block';
+                document.getElementById('webhook-fields').style.display = 'none';
+                document.getElementById('api-fields').style.display = 'none';
+            });
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CloudIndustrie. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

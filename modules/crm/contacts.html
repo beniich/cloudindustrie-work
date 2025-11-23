@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts CRM | CloudIndustrie</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CloudIndustrie</div>
+            <ul class="nav-links">
+                <li><a href="index.html">CRM</a></li>
+                <li><a href="opportunites.html">Opportunités</a></li>
+                <li><a href="reporting.html">Reporting</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Gestion des Contacts</h1>
+            <p>Ajoutez, modifiez et consultez vos clients et prospects.</p>
+        </section>
+        <section class="features">
+            <h2>Liste des contacts</h2>
+            <table style="width:100%;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(30,64,175,0.07);margin-bottom:2rem;">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                        <th>Entreprise</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody id="contacts-table-body">
+                    <tr>
+                        <td>Jean Dupont</td>
+                        <td>jean.dupont@email.com</td>
+                        <td>06 12 34 56 78</td>
+                        <td>Acme Corp</td>
+                        <td>Client</td>
+                    </tr>
+                    <tr>
+                        <td>Marie Martin</td>
+                        <td>marie.martin@email.com</td>
+                        <td>06 98 76 54 32</td>
+                        <td>BetaTech</td>
+                        <td>Prospect</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Ajouter un contact</h3>
+            <form id="add-contact-form" style="background:#f6f8fa;padding:1rem;border-radius:8px;box-shadow:0 1px 4px rgba(30,64,175,0.07);margin-bottom:2rem;">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="telephone">Téléphone</label>
+                <input type="text" id="telephone" name="telephone" required>
+                <label for="entreprise">Entreprise</label>
+                <input type="text" id="entreprise" name="entreprise" required>
+                <label for="statut">Statut</label>
+                <select id="statut" name="statut" required>
+                    <option value="Client">Client</option>
+                    <option value="Prospect">Prospect</option>
+                </select>
+                <button type="submit" class="cta">Ajouter</button>
+            </form>
+            <script>
+            document.getElementById('add-contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var nom = document.getElementById('nom').value;
+                var email = document.getElementById('email').value;
+                var telephone = document.getElementById('telephone').value;
+                var entreprise = document.getElementById('entreprise').value;
+                var statut = document.getElementById('statut').value;
+                var tbody = document.getElementById('contacts-table-body');
+                var row = document.createElement('tr');
+                row.innerHTML = `<td>${nom}</td><td>${email}</td><td>${telephone}</td><td>${entreprise}</td><td>${statut}</td>`;
+                tbody.appendChild(row);
+                this.reset();
+            });
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CloudIndustrie. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

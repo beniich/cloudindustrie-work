@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cybersecurity Insights Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0A2A4E",
+                        "secondary": "#00BFFF",
+                        "background-light": "#F5F7FA",
+                        "background-dark": "#101622",
+                        "text-light-primary": "#1F2937",
+                        "text-dark-primary": "#F5F7FA",
+                        "text-light-secondary": "#6C757D",
+                        "text-dark-secondary": "#ADB5BD",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#18202F",
+                        "chip-light": "#E9ECEF",
+                        "chip-dark": "#2C3545",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="flex items-center bg-card-light dark:bg-card-dark p-4 justify-between sticky top-0 z-10 shadow-sm dark:shadow-none dark:border-b dark:border-gray-700">
+<h1 class="text-text-light-primary dark:text-text-dark-primary text-xl font-bold leading-tight flex-1">Cybersecurity Insights</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-text-light-secondary dark:text-text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</div>
+</header>
+<!-- Category Filter Pills -->
+<div class="p-4 bg-card-light dark:bg-card-dark">
+<div class="flex gap-3 overflow-x-auto pb-2 -mb-2">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4 cursor-pointer"><p class="text-white text-sm font-medium leading-normal">All</p></div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light dark:bg-chip-dark pl-4 pr-4 cursor-pointer">
+<p class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal">Threat Intelligence</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light dark:bg-chip-dark pl-4 pr-4 cursor-pointer">
+<p class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal">Cloud Security</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light dark:bg-chip-dark pl-4 pr-4 cursor-pointer">
+<p class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal">Compliance</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light dark:bg-chip-dark pl-4 pr-4 cursor-pointer">
+<p class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal">Best Practices</p>
+</div>
+</div>
+</div>
+<main class="flex-grow">
+<!-- Featured Article Card -->
+<div class="p-4 @container bg-background-light dark:bg-background-dark">
+<div class="flex flex-col items-stretch justify-start rounded-lg bg-card-light dark:bg-card-dark overflow-hidden shadow-sm">
+<div class="w-full bg-center bg-no-repeat aspect-[16/9] bg-cover" data-alt="Abstract blue and green digital grid pattern representing artificial intelligence" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoldR-bVIA62Nps3oyhFbzZZiFUWWKxy7FfTGoCis4hyKHeS43KQOg56Bs-n3BSYJmQdwjB8KDISJSrshal4elxp-gqOciBpW1m4rKZkrIFbnJwJSxaQtG4ZWMRGtFgqSwzlYRTctLa2mbev_6d3uL_ybvqAnDtkFq84pgVJ9pxh9cIF3r_j-d3MI_sAPtzlFULs5Uv46Di7QszCMwOertry2gaeCgG6p0xZhDPipZogoR0I81snQFPDP1PtAtUI6YOpqVAMEMfj7P");'></div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-2 p-4">
+<p class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight">The Rise of AI-Powered Phishing Attacks</p>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-base font-normal leading-normal">A deep dive into how artificial intelligence is changing the landscape of social engineering and what you can do to protect your organization.</p>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">Threat Intelligence • 5 min read</p>
+</div>
+</div>
+</div>
+<!-- Separator -->
+<div class="px-4">
+<hr class="border-gray-200 dark:border-gray-700"/>
+</div>
+<!-- Standard Article Cards -->
+<div class="p-4 bg-background-light dark:bg-background-dark">
+<div class="flex items-stretch justify-between gap-4 rounded-lg">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-bold leading-tight">Securing Your Multi-Cloud Environment in 2024</p>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">Cloud Security • 7 min read</p>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex-1" data-alt="Stylized cloud icons connected by lines, symbolizing a multi-cloud network." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBK9n51ORyb6Q01Vl7CCmFsjf3lNR5TX9kST8xJAsRde9GV1pK_d3RHFLBVfKd3uQY6OU9f-A9bk0pGwTbrzhOlWqzJwz684w94RIiBdVqpdIBCfdyLyJtLWJecvX52GSHVpTmYFKIufEG9xr8xg3sV6k9wFm4dqKCmyrNTQFHRW7_NSH32rJpiiOEZgxTuOBwnrSU-Iw_ZIDCxIy-asZVuR1hRU_-Y3FX_wq_ghyZG8xznH6Ybnh67fTu6aUZkkJiJfwJ1oV3ifRMa");'></div>
+</div>
+</div>
+<div class="p-4 bg-background-light dark:bg-background-dark">
+<div class="flex items-stretch justify-between gap-4 rounded-lg">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-bold leading-tight">Navigating GDPR: A Practical Guide for SMEs</p>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">Compliance • 10 min read</p>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex-1" data-alt="A close-up of a legal document with a pair of reading glasses on top." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZfu6X9Sg7fzqRE38Vw5TX2j4AO9YHsobHAocauQsNIDMk-SJD9GsESscJdnTgcuP8jrdFFL2XJJPlnJNaAJN-qKbFIKfYHSxBBbPH2oz0xkxwyVonh8V9WGAWp8c1pShjJuSInWpI-jb7OoS4aLu6WMnoLePFylQJGaBpoqhVxnyf9igrQzUPcJYo7YuAJeFrHk1NSL77BDfgj-hzlypxvKq0YvnlNFldIAo_Yyi5dd0RcB3D45X_dSRq4svWV_vheHPBp6r_aDX2");'></div>
+</div>
+</div>
+<div class="p-4 bg-background-light dark:bg-background-dark">
+<div class="flex items-stretch justify-between gap-4 rounded-lg">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-bold leading-tight">Top 10 Cybersecurity Best Practices for Remote Teams</p>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">Best Practices • 6 min read</p>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex-1" data-alt="A person working on a laptop from a home office setup with a security lock icon overlay." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyhyIdGYU0Bt76aglVI8zaLLFUcDOjdlr5wHXyGG9bhYDgCPwhLZdzqiojYt5tpa_FPj2PqJcZgTxliI9n4c_Kt5taM8L2RVcaHkjuH2dTxlU9QqCZ8pzMbLIPhWYozxJ2F1faEz4cUdaebG43zBcKflCtERvYjBh9a6IgBYx175A_5kEdc0EajisGzf1D7fqtRWHISglXdwB5BsnHtl2U9sEGl3kr2zHzhHQ4LhZ628dOIgvGHA63BeHm7J6Gh_-MqrsKaSZJ_JLt");'></div>
+</div>
+</div>
+<!-- Load More Button -->
+<div class="p-4 pt-2 pb-6">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-chip-light dark:bg-chip-dark text-text-light-primary dark:text-text-dark-primary text-base font-medium leading-normal hover:bg-gray-300 dark:hover:bg-gray-600">
+<span class="truncate">Load More</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="flex items-center justify-around bg-card-light dark:bg-card-dark p-2 sticky bottom-0 z-10 border-t border-gray-200 dark:border-gray-700">
+<a class="flex flex-col items-center gap-1 w-20 p-2 text-text-light-secondary dark:text-text-dark-secondary" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-20 p-2 text-text-light-secondary dark:text-text-dark-secondary" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-xs font-medium">Services</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-20 p-2 text-primary dark:text-secondary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="text-xs font-bold">Insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-20 p-2 text-text-light-secondary dark:text-text-dark-secondary" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-xs font-medium">Contact</span>
+</a>
+</nav>
+</div>
+</body></html>

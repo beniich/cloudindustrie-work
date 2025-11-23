@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Utilisateurs | CloudIndustrie CRM</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CloudIndustrie</div>
+            <ul class="nav-links">
+                <li><a href="index.html">CRM</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="opportunites.html">Opportunités</a></li>
+                <li><a href="reporting.html">Reporting</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Gestion des Utilisateurs</h1>
+            <p>Ajoutez, modifiez et gérez les utilisateurs de votre organisation. Attribuez des rôles et des permissions pour sécuriser l'accès à votre CRM.</p>
+        </section>
+        <section class="features">
+            <h2>Liste des utilisateurs</h2>
+            <table style="width:100%;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(30,64,175,0.07);margin-bottom:2rem;">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Rôle</th>
+                        <th>Permissions</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table-body">
+                    <tr>
+                        <td>Admin Principal</td>
+                        <td>admin@cloudindustrie.com</td>
+                        <td>Administrateur</td>
+                        <td>Accès total</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Julie Client</td>
+                        <td>julie.client@email.com</td>
+                        <td>Utilisateur</td>
+                        <td>Lecture, Ajout</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Ajouter un utilisateur</h3>
+            <form id="add-user-form" style="background:#f6f8fa;padding:1rem;border-radius:8px;box-shadow:0 1px 4px rgba(30,64,175,0.07);margin-bottom:2rem;">
+                <label for="user-nom">Nom</label>
+                <input type="text" id="user-nom" name="user-nom" required>
+                <label for="user-email">Email</label>
+                <input type="email" id="user-email" name="user-email" required>
+                <label for="user-role">Rôle</label>
+                <select id="user-role" name="user-role" required>
+                    <option value="Administrateur">Administrateur</option>
+                    <option value="Utilisateur">Utilisateur</option>
+                </select>
+                <label for="user-permissions">Permissions</label>
+                <select id="user-permissions" name="user-permissions" required>
+                    <option value="Accès total">Accès total</option>
+                    <option value="Lecture, Ajout">Lecture, Ajout</option>
+                    <option value="Lecture seule">Lecture seule</option>
+                </select>
+                <button type="submit" class="cta">Ajouter</button>
+            </form>
+            <script>
+            document.getElementById('add-user-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var nom = document.getElementById('user-nom').value;
+                var email = document.getElementById('user-email').value;
+                var role = document.getElementById('user-role').value;
+                var permissions = document.getElementById('user-permissions').value;
+                var tbody = document.getElementById('users-table-body');
+                var row = document.createElement('tr');
+                row.innerHTML = `<td>${nom}</td><td>${email}</td><td>${role}</td><td>${permissions}</td><td></td>`;
+                tbody.appendChild(row);
+                this.reset();
+            });
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CloudIndustrie. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
